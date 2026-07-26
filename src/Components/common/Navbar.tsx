@@ -1,8 +1,8 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { HiMenu, HiX } from 'react-icons/hi';
 
 const NAV_ITEMS = [
   { label: 'ABOUT', id: 'about' },
@@ -14,6 +14,7 @@ const NAV_ITEMS = [
 
 export default function Navbar() {
   const [activeTab, setActiveTab] = useState('about');
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     // 1. Target all section elements by ID
@@ -53,8 +54,8 @@ export default function Navbar() {
           HOSENUZZAMAN
         </a>
 
-        {/* Floating Nav Container */}
-        <nav className="flex items-center gap-1 bg-[#12131a] border border-slate-800/80 p-1.5 rounded-full shadow-lg">
+        {/* Desktop Floating Nav Container */}
+        <nav className="hidden md:flex items-center gap-1 bg-[#12131a] border border-slate-800/80 p-1.5 rounded-full shadow-lg">
           {NAV_ITEMS.map((item) => {
             const isActive = activeTab === item.id;
             return (
@@ -82,7 +83,44 @@ export default function Navbar() {
           })}
         </nav>
 
+        {/* Mobile Hamburger Button */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-slate-300 hover:text-white p-2 focus:outline-none"
+            aria-label="Toggle Menu"
+          >
+            {isOpen ? <HiX className="w-7 h-7" /> : <HiMenu className="w-7 h-7" />}
+          </button>
+        </div>
+
       </div>
+
+      {/* Mobile Dropdown Menu (Outside header container for clean full-width layout) */}
+      {isOpen && (
+        <div className="md:hidden bg-[#08080a]/95 backdrop-blur-md border-b border-[#c93969] px-6 py-4 space-y-3">
+          {NAV_ITEMS.map((item) => {
+            const isActive = activeTab === item.id;
+            return (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={() => {
+                  setActiveTab(item.id);
+                  setIsOpen(false);
+                }} 
+                className={`block px-4 py-2.5 rounded-lg text-sm font-bold tracking-wider uppercase transition-all ${
+                  isActive
+                    ? 'bg-[#a80038] text-white shadow-[0_0_15px_rgba(255,0,85,0.4)]'
+                    : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                }`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+        </div>
+      )}
     </header>
   );
 }

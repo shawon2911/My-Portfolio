@@ -69,7 +69,7 @@ export default function Hero() {
               href="PASTE_YOUR_GOOGLE_DRIVE_LINK_HERE"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#a80038] hover:bg-[#e0004c] text-white font-bold text-xs sm:text-sm uppercase tracking-wider rounded-xl shadow-[0_0_20px_rgba(255,0,85,0.3)] transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#a80038] hover:bg-[#e0004c] text-white font-bold text-xs sm:text-sm uppercase tracking-wider rounded-md shadow-[0_0_20px_rgba(255,0,85,0.3)] transition-all duration-300"
             >
               <FaFileDownload className="text-xs" />
               View Resume
