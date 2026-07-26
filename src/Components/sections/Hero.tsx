@@ -67,8 +67,8 @@ export default function Hero() {
           {/* Circle Social Links */}
           <div className="mt-10 flex items-center gap-3">
             {[
-              { icon: <FaGithub />, href: "https://github.com" },
-              { icon: <FaLinkedin />, href: "https://linkedin.com" },
+              { icon: <FaGithub />, href: "https://github.com/shawon2911" },
+              { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/hosenuzzaman" },
             ].map((social, idx) => (
               <a
                 key={idx}
@@ -102,14 +102,14 @@ export default function Hero() {
             }}
           >
             <div className="w-full h-full rounded-full bg-[#12131a] overflow-hidden border-2 border-slate-800 flex items-center justify-center relative shadow-inner">
-              <Image
-                src="/portfolio-image.png"
-                alt="Profile Photo"
-                fill
-                sizes="(max-width: 640px) 320px, 416px"
-                className="object-cover object-top"
-                priority
-              />
+             <Image 
+  src="/portfolio-image.png" 
+  alt="Profile Photo" 
+  width={500}
+  height={500}
+  className="w-full h-full object-cover object-top"
+  priority
+/>
             </div>
           </motion.div>
 
