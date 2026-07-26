@@ -1,4 +1,3 @@
-// components/Hero.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -8,7 +7,9 @@ import {
   FaLinkedin,
   FaFolderOpen,
   FaPaperPlane,
+  FaFileDownload,
 } from "react-icons/fa";
+import {  FaFacebook } from "react-icons/fa6";
 
 export default function Hero() {
   return (
@@ -34,9 +35,10 @@ export default function Hero() {
 
           {/* Short Bio */}
           <p className="mt-6 text-slate-400 text-base sm:text-lg leading-8 max-w-2xl">
-           I am{" "}
-    <span className="text-white font-semibold">Hosenuzzaman</span>, 
-    a Full-Stack Developer specializing in modern frontend experiences. I focus on building responsive, highly functional web applications with clean code and solid logic.
+            I am <span className="text-white font-semibold">Hosenuzzaman</span>,
+            a Full-Stack Developer specializing in modern frontend experiences.
+            I focus on building responsive, highly functional web applications
+            with clean code and solid logic.
           </p>
 
           <p className="mt-4 text-slate-400 text-base sm:text-base leading-8 max-w-2xl">
@@ -49,7 +51,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md text-xs font-bold tracking-wider text-white bg-[#ff0055] hover:bg-[#e0004c] transition-all duration-200 uppercase shadow-lg shadow-[#ff0055]/30"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md text-xs font-bold tracking-wider text-white bg-[#a80038] hover:bg-[#e0004c] transition-all duration-200 uppercase shadow-lg shadow-[#ff0055]/30"
             >
               <FaFolderOpen className="text-sm" />
               VIEW PROJECTS
@@ -62,13 +64,30 @@ export default function Hero() {
               <FaPaperPlane className="text-sm" />
               CONTACT ME
             </a>
+
+            <a
+              href="PASTE_YOUR_GOOGLE_DRIVE_LINK_HERE"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#a80038] hover:bg-[#e0004c] text-white font-bold text-xs sm:text-sm uppercase tracking-wider rounded-xl shadow-[0_0_20px_rgba(255,0,85,0.3)] transition-all duration-300"
+            >
+              <FaFileDownload className="text-xs" />
+              View Resume
+            </a>
           </div>
 
           {/* Circle Social Links */}
           <div className="mt-10 flex items-center gap-3">
             {[
               { icon: <FaGithub />, href: "https://github.com/shawon2911" },
-              { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/hosenuzzaman" },
+              {
+                icon: <FaLinkedin />,
+                href: "https://www.linkedin.com/in/hosenuzzaman",
+              },
+              {
+                icon: <FaFacebook />,
+                href: "https://www.facebook.com/shawon.hossain.1272",
+              },
             ].map((social, idx) => (
               <a
                 key={idx}
@@ -102,21 +121,23 @@ export default function Hero() {
             }}
           >
             <div className="w-full h-full rounded-full bg-[#12131a] overflow-hidden border-2 border-slate-800 flex items-center justify-center relative shadow-inner">
-             <Image 
-  src="/portfolio-image.png" 
-  alt="Profile Photo" 
-  width={500}
-  height={500}
-  className="w-full h-full object-cover object-top"
-  priority
-/>
+              <Image
+                src="/portfolio-image.png"
+                alt="Profile Photo"
+                width={500}
+                height={500}
+                className="w-full h-full object-cover object-top"
+                priority
+              />
             </div>
           </motion.div>
 
           {/* Subtitle Quote */}
           <div className="mt-8 text-center max-w-sm">
             <p className="text-xs sm:text-sm text-[#fc2e72] italic">
-              &quot;Building responsive full-stack applications and turning complex logical problems into clean, high-performance web experiences.&quot;
+              &quot;Building responsive full-stack applications and turning
+              complex logical problems into clean, high-performance web
+              experiences.&quot;
             </p>
           </div>
         </motion.div>

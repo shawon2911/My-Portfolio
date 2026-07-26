@@ -118,7 +118,7 @@ export default function Projects() {
                     href={currentProject.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-bold tracking-wider text-white bg-[#ff0055] hover:bg-[#e0004c] transition-all uppercase shadow-lg shadow-[#ff0055]/25"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-bold tracking-wider text-white bg-[#a80038] hover:bg-[#e0004c] transition-all uppercase shadow-lg shadow-[#ff0055]/25"
                   >
                     Live Demo <FaExternalLinkAlt className="text-[10px]" />
                   </a>

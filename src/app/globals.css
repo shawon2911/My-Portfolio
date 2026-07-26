@@ -18,5 +18,9 @@
   body {
     background-color: var(--color-brand-dark);
     color: #f8fafc;
+    
+  }
+  a, button, input, textarea {
+  cursor: pointer;
   }
 }
