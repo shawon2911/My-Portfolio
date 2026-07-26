@@ -1,4 +1,6 @@
+import Footer from "@/Components/common/Footer";
 import Navbar from "@/Components/common/Navbar";
+import Contact from "@/Components/sections/Contact";
 import Education from "@/Components/sections/Education";
 import Hero from "@/Components/sections/Hero";
 import Projects from "@/Components/sections/Projects";
@@ -14,6 +16,8 @@ export default function Home() {
       <Skills />
       <Projects />
       <Education />
+      <Contact />
+      <Footer />
     </main>
   );
 }
