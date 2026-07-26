@@ -1,79 +1,126 @@
+// components/Hero.tsx
+"use client";
 
-'use client';
-
-import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaArrowRight } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaFolderOpen,
+  FaPaperPlane,
+} from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center max-w-6xl mx-auto px-6 pt-24 pb-12 overflow-hidden">
-      
-      {/* Background Ambient Light Effect */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
+    <section
+      id="about"
+      className="relative min-h-screen flex items-center pt-28 pb-16 max-w-7xl mx-auto px-6 overflow-hidden"
+    >
+      {/* Background Subtle Gradient Glow */}
+      <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] bg-[#ff0055]/10 blur-[130px] rounded-full pointer-events-none -z-10" />
 
-      {/* Hero Badge */}
-      <motion.div
-        initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-      >
-        <span className="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold tracking-wider text-sky-400 bg-sky-500/10 rounded-full border border-sky-500/20">
-          <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
-          Frontend & Web Developer
-        </span>
-      </motion.div>
-
-      {/* Main Headline */}
-      <motion.h1 
-        className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mt-6 text-white max-w-4xl leading-[1.1]"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-      >
-        Crafting fast, sleek, and responsive modern web apps.
-      </motion.h1>
-
-      {/* Paragraph */}
-      <motion.p 
-        className="text-lg sm:text-xl text-slate-400 mt-6 max-w-2xl leading-relaxed"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        I focus on building dynamic frontend interfaces with React, Next.js, and Tailwind CSS, turning complex ideas into clean digital solutions.
-      </motion.p>
-
-      {/* Actions */}
-      <motion.div 
-        className="mt-10 flex flex-wrap items-center gap-4"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
-        <a 
-          href="#projects" 
-          className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-medium bg-sky-500 hover:bg-sky-600 text-white transition-all duration-200 shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40"
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+        {/* LEFT COLUMN: Text & Actions */}
+        <motion.div
+          className="lg:col-span-7 flex flex-col items-start"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          Explore Work <FaArrowRight className="text-xs" />
-        </a>
+          {/* Main Headline with Pink Accent */}
+          <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white uppercase leading-tight">
+            ABOUT <span className="text-[#ff0055]">ME</span>
+          </h1>
 
-        <a 
-          href="#contact" 
-          className="px-6 py-3.5 rounded-lg font-medium border border-slate-800 bg-slate-900/60 hover:bg-slate-800/80 text-slate-300 transition-colors duration-200"
+          {/* Short Bio */}
+          <p className="mt-6 text-slate-400 text-base sm:text-lg leading-8 max-w-2xl">
+           I am{" "}
+    <span className="text-white font-semibold">Hosenuzzaman</span>, 
+    a Full-Stack Developer specializing in modern frontend experiences. I focus on building responsive, highly functional web applications with clean code and solid logic.
+          </p>
+
+          <p className="mt-4 text-slate-400 text-base sm:text-base leading-8 max-w-2xl">
+            I thrive on solving real-world problems, writing clean reusable
+            code, and continuously learning new technologies to deliver
+            impactful digital products.
+          </p>
+
+          {/* Primary Action Buttons */}
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md text-xs font-bold tracking-wider text-white bg-[#ff0055] hover:bg-[#e0004c] transition-all duration-200 uppercase shadow-lg shadow-[#ff0055]/30"
+            >
+              <FaFolderOpen className="text-sm" />
+              VIEW PROJECTS
+            </a>
+
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md text-xs font-bold tracking-wider text-slate-300 bg-[#12131a] hover:bg-[#1a1c26] border border-slate-800 transition-colors duration-200 uppercase"
+            >
+              <FaPaperPlane className="text-sm" />
+              CONTACT ME
+            </a>
+          </div>
+
+          {/* Circle Social Links */}
+          <div className="mt-10 flex items-center gap-3">
+            {[
+              { icon: <FaGithub />, href: "https://github.com" },
+              { icon: <FaLinkedin />, href: "https://linkedin.com" },
+            ].map((social, idx) => (
+              <a
+                key={idx}
+                href={social.href}
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 rounded-full bg-[#12131a] border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-[#ff0055] hover:bg-[#ff0055]/10 transition-all duration-200 text-base"
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* RIGHT COLUMN: Larger Animated Profile Photo Frame & Quote */}
+        <motion.div
+          className="lg:col-span-5 flex flex-col items-center justify-center"
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Contact Me
-        </a>
+          {/* Continuous Bouncing/Floating Avatar Container */}
+          <motion.div
+            className="relative w-80 h-80 sm:w-[26rem] sm:h-[26rem] rounded-full p-1 bg-gradient-to-b from-[#ff0055]/50 via-slate-800/80 to-transparent shadow-[0_0_60px_rgba(255,0,85,0.2)]"
+            animate={{ y: [0, -12, 0] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut",
+            }}
+          >
+            <div className="w-full h-full rounded-full bg-[#12131a] overflow-hidden border-2 border-slate-800 flex items-center justify-center relative shadow-inner">
+              <Image
+                src="/portfolio-image.png"
+                alt="Profile Photo"
+                fill
+                sizes="(max-width: 640px) 320px, 416px"
+                className="object-cover object-top"
+                priority
+              />
+            </div>
+          </motion.div>
 
-        <div className="flex items-center gap-4 ml-4 text-xl text-slate-400">
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-sky-400 transition-colors">
-            <FaGithub />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-sky-400 transition-colors">
-            <FaLinkedin />
-          </a>
-        </div>
-      </motion.div>
-
+          {/* Subtitle Quote */}
+          <div className="mt-8 text-center max-w-sm">
+            <p className="text-xs sm:text-sm text-[#fc2e72] italic">
+              &quot;Building responsive full-stack applications and turning complex logical problems into clean, high-performance web experiences.&quot;
+            </p>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }
