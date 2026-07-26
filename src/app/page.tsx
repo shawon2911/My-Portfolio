@@ -1,19 +1,13 @@
-// src/app/page.tsx
-import Hero from '@/Components/sections/Hero'
-import About from '@/Components/sections/About'
-import Skills from '@/Components/sections/Skills'
-import Projects from '@/Components/sections/Projects'
-import Contact from '@/Components/sections/Contacts'
+import Navbar from "@/Components/common/Navbar";
+import Hero from "@/Components/sections/Hero";
+
 
 
 export default function Home() {
   return (
-    <main>
+    <main className="w-full">
+      <Navbar />
       <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
     </main>
-  )
+  );
 }
