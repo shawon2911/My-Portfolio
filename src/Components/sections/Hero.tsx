@@ -66,13 +66,15 @@ export default function Hero() {
             </a>
 
             <a
-              href="PASTE_YOUR_GOOGLE_DRIVE_LINK_HERE"
-              target="_blank"
+              // href="https://drive.google.com/file/d/1Kp_cFoQJGZEc5XwD9fcqyv7S5AKH_Uyh/view?usp=drive_link"
+              href="/Resume_of_Hosenuzzaman.pdf"
+              download="Resume_of_Hosenuzzaman.pdf"
+              // target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#a80038] hover:bg-[#e0004c] text-white font-bold text-xs sm:text-sm uppercase tracking-wider rounded-md shadow-[0_0_20px_rgba(255,0,85,0.3)] transition-all duration-300"
             >
               <FaFileDownload className="text-xs" />
-              View Resume
+              Download Resume
             </a>
           </div>
 

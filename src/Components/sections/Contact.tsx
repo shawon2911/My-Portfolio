@@ -116,7 +116,7 @@ export default function Contact() {
             <div className="space-y-4">
               {infoCards.map(({ label, value, icon: Icon, href }) => {
                 const CardInner = (
-                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-[#12131a] border border-slate-800/80 hover:border-[#ff0055]/40 transition-colors duration-300 group">
+                  <div className="flex items-center gap-4 p-4 mt-2 rounded-2xl bg-[#12131a] border border-slate-800/80 hover:border-[#ff0055]/40 transition-colors duration-300 group">
                     <div className="p-3 rounded-xl bg-[#ff0055]/10 text-[#ff0055] group-hover:bg-[#ff0055] group-hover:text-white transition-colors shrink-0">
                       <Icon className="text-lg" />
                     </div>
@@ -213,7 +213,7 @@ export default function Contact() {
               <input
                 {...register('name')}
                 type="text"
-                placeholder="John Doe"
+                placeholder="Enter Your Name"
                 className={`w-full bg-[#08080a] border ${errors.name ? 'border-red-500' : 'border-slate-800'} rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#ff0055] transition-colors`}
               />
               {errors.name && <p className="text-red-400 text-[11px] mt-1">{errors.name.message}</p>}
@@ -224,7 +224,7 @@ export default function Contact() {
               <input
                 {...register('email')}
                 type="email"
-                placeholder="john@example.com"
+                placeholder="Enter Your Email"
                 className={`w-full bg-[#08080a] border ${errors.email ? 'border-red-500' : 'border-slate-800'} rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#ff0055] transition-colors`}
               />
               {errors.email && <p className="text-red-400 text-[11px] mt-1">{errors.email.message}</p>}
